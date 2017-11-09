@@ -15,12 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Authentication Development Tools
- * Uses to developers and main admins.
+ * Authentication Development Tools - Uses to developers and main admins.
  *
  * @package    auth_dev
  * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2017 Carlos Escobedo <http://www.twitter.com/carlosagile>)
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -30,10 +30,10 @@ require_once($CFG->libdir.'/authlib.php');
 /**
  * Authentication Development Tools plugin.
  *
- * @package    auth
- * @subpackage dev
+ * @package    auth_dev
  * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2017 Carlos Escobedo <http://www.twitter.com/carlosagile>)
  */
 class auth_plugin_dev extends auth_plugin_base {
     /**
@@ -49,7 +49,9 @@ class auth_plugin_dev extends auth_plugin_base {
         $this->config = get_config(self::COMPONENT_NAME);
     }
 
-    
+    /**
+     * Hook for overriding behaviour of pre logout page.
+     */
     public function prelogout_hook() {
         global $CFG, $SESSION, $USER;
 
@@ -58,7 +60,7 @@ class auth_plugin_dev extends auth_plugin_base {
             // IF ID==0 then logout request, notthing to do.
             if ($id) {
                 $realuser = \core\session\manager::get_realuser();
-                // Check is siteadmin. 
+                // Check is siteadmin.
                 // Only siteadmins can use this tool.
                 if (is_siteadmin($realuser)) {
                     complete_user_login($realuser);
@@ -66,24 +68,20 @@ class auth_plugin_dev extends auth_plugin_base {
                     redirect($SESSION->wantsurl);
                 }
             }
-        } 
+        }
     }
 
     /**
      * Hook for overriding behaviour of logout page.
      * This method is called from login/logout.php page for all enabled auth plugins.
-     *
-     * @global string
      */
-    function logoutpage_hook() {
-        global $redirect; // can be used to override redirect after logout
-       
-          if (!empty($this->config->enablelogouturl)) {
+    public function logoutpage_hook() {
+        global $redirect; // Can be used to override redirect after logout.
+
+        if (!empty($this->config->enablelogouturl)) {
             if (!empty($this->config->logouturl)) {
                 $redirect = $this->config->logouturl;
             }
-        }     
+        }
     }
 }
-
-

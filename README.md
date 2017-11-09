@@ -4,7 +4,7 @@ Moodle Auth Development
 Information
 -----------
 
-This plugin allow a user not logout when this user has loginas. 
+This plugin allow a user not logout when this user has loginas.
 It's useful to developers and main administrators.
 You have to enable in authentication settings to work it.
 
@@ -17,7 +17,7 @@ Add Redirect to specific URL when user logout.
 
 Version
 -------
-Moodle 3.2+, 3.1+, 3.0+, 2.9, 2.8 and 2.7 and 2.6.
+Moodle 3.4+, 3.2+, 3.1+, 3.0+, 2.9, 2.8 and 2.7 and 2.6.
 
 TO INSTALL:
 

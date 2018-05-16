@@ -17,7 +17,7 @@ Add Redirect to specific URL when user logout.
 
 Version
 -------
-Moodle 3.4+, 3.2+, 3.1+, 3.0+, 2.9, 2.8 and 2.7 and 2.6.
+Moodle 3.5+, 3.4+, 3.2+, 3.1+, 3.0+, 2.9, 2.8 and 2.7 and 2.6.
 
 TO INSTALL:
 
@@ -33,6 +33,9 @@ Download way
 - Unzip it into  auth/ folder in your Moodle,
 - Rename the new folder "moodle-auth_dev-master" to "dev"
 - Enjoy!!!
+
+NEW FEATURE
+- Privacy Subsystem implementation for auth_dev. <https://docs.moodle.org/dev/Privacy_API>
 
 FUTURE SCOPE:
 - ADD useful actions to developer like not create user in ldap_plugin when user not exist.

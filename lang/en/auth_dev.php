@@ -29,3 +29,4 @@ $string['config_logouturl'] = 'Logout url redirection';
 $string['config_enablelogouturl'] = 'Enable Logout url redirection';
 $string['config_enablelogouturl_description'] = 'If this option is enabled ANY user will be redirected when logout.
 If not, only ADMIN will be redirected when logout.';
+$string['privacy:metadata'] = 'The Auth Development tools plugin does not store any personal data.';

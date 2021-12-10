@@ -53,7 +53,7 @@ class auth_plugin_dev extends auth_plugin_base {
      * Hook for overriding behaviour of pre logout page.
      */
     public function prelogout_hook() {
-        global $CFG, $SESSION, $USER;
+        global $CFG, $SESSION;
 
         if (\core\session\manager::is_loggedinas()) {
             $id = optional_param('id', 0, PARAM_INT);
@@ -83,5 +83,17 @@ class auth_plugin_dev extends auth_plugin_base {
                 $redirect = $this->config->logouturl;
             }
         }
+    }
+
+    /**
+     * Returns false to avoid a wrong username error.
+     *
+     * @param string $username The username (without system magic quotes)
+     * @param string $password The password (without system magic quotes)
+     *
+     * @return bool Authentication success or failure.
+     */
+    function user_login($username, $password) {
+        return false;
     }
 }

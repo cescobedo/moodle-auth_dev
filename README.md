@@ -17,7 +17,7 @@ Add Redirect to specific URL when user logout.
 
 Version
 -------
-Moodle 3.11+, 3.10+, 3.9+, 3.8+, 3.7+, 3.6+, 3.5+, 3.4+, 3.2+, 3.1+, 3.0+, 2.9, 2.8 and 2.7 and 2.6.
+Moodle 4.5 and legacy releases.
 
 TO INSTALL:
 

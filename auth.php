@@ -93,7 +93,7 @@ class auth_plugin_dev extends auth_plugin_base {
      *
      * @return bool Authentication success or failure.
      */
-    function user_login($username, $password) {
+    public function user_login($username, $password) {
         return false;
     }
 }
